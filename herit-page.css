@@ -1,0 +1,104 @@
+#herit-page{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: rgba(255, 233, 233, 0.7);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+#services{
+    margin-top: 5vh;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    display: grid;
+    grid-auto-rows: 10vh;
+    overflow-y: scroll;
+    position: absolute;
+    color: rgba(178, 0, 0, 1);
+}
+#exit-grid{
+    display: flex;
+    justify-content: end;
+    height: 5vh;
+    position: sticky;
+    top: 0;
+}
+#search-grid{
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    position: sticky;
+    top: 5vh;
+}
+#search{
+    width: 50vw;
+    text-align: center;
+    font-family: 'Jura-Bold';
+    font-size: min(3vw,30px);
+    color: rgba(178, 0, 0, 1);
+    outline: 0;
+    border: min(4px,0.7vw) solid #650000;
+}
+#hp-service{
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#serv-photo{
+    height: 30vh;
+}
+#serv-description{
+    text-align: center;
+    font-family: 'Jura-Light';
+    font-size: min(3vw,30px);
+    margin-left: 5vw;
+    margin-top: 2vw;
+    width: 70vw;
+    line-height: 5vw;
+}
+#serv-price{
+    text-align: center;
+    font-family: 'Jura-Bold';
+    margin-top: 5vh;
+    font-size: min(3vw,30px);
+}
+#herit-cb-info{
+    text-align: center;
+    font-family: 'Jura-Bold';
+    margin-top: 5vh;
+    font-size: min(4vw,40px);
+}
+#herit-call-box{
+    display: grid;
+    justify-content:center;
+    vertical-align: middle;
+}
+#herit-phone-nom{
+    background-color: transparent;
+    height: min(4vw,40px);
+    font-family: 'Jura-Light';
+    text-align: center;
+    font-size: min(4vw,40px);
+    color: rgba(178, 0, 0, 1);
+    border-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FF0000 54.69%, rgba(255, 255, 255, 0) 100%) 40;
+    border-width: 2px 0px 2px 0px;
+    border-style: solid;
+    margin-top: 5vh;
+    outline: none;
+}
+#herit-callbox-send-nom{
+    height: 5vw;
+    width: 25vw;
+    background: linear-gradient(180deg, #ED0000 0%, #C10000 100%);
+    border: none;
+    font-family: 'Jura-Light';
+    text-align: center;
+    font-size: min(3vw,40px);
+    color: #FFFFFF;
+    margin-bottom: 5vw;
+    box-shadow: 0px 1px 6px #FFFFFF;
+    margin: 5vh auto;
+}
