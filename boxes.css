@@ -6,7 +6,7 @@
     font-family: 'Jura-Bold';
     text-align: center;
     font-size: min(6vw,60px);
-    margin: 0;
+    margin-top: 6vw;
     color: rgba(178, 0, 0, 1);
 }
 .flex{
@@ -121,12 +121,14 @@
     background-color: rgba(255, 212, 212, 1);
     display: grid;
     justify-content: center;
+    height: 56vw;
 }
 #sales-boxes{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
     margin-top: 7vw;
+    height: 28vw;
 }
 .sales-box{
     margin: min(2vw,20px);
@@ -134,26 +136,21 @@
     width: 10vw;
     height: 10vw;
     background-color: #FFFFFF;
+    opacity: 0.5;
+    z-index: 0;
 }
-.active-sb{
-    width: 28vw;
-    height: 28vw;
-}
-#sales-nav{
-    margin-top: 2vw;
-    margin-bottom: 2vw;
+#sales-navigation{
     display: flex;
     justify-content: center;
 }
-.nav-sale-dot{
-    border-radius: 100%;
-    height: min(1vw,10px);
-    width: min(1vw,10px);
-    margin:min(0.5vw,5px) ;
-    background-color: #E80000;
+#sales-navigation img{
+    height: 3vw;
+    width: 3vw;
+    margin: 3vw;
+    opacity: 0.2;
 }
-.nsd-active{
-    background-color: #7B0000;
+#sales-navigation img:hover{
+    opacity: 1;
 }
 #reviews{
     display: grid;
@@ -195,13 +192,14 @@
     color:#B20000;
     margin-top: 7vw;
 }
-#call-back-div{
-    display: flex;
-    justify-content: end;
-    position: sticky;
-    bottom: 1vw;
-}
 #call-back{
     height: min(15vw,150px);
     width: min(15vw,150px);
+    position: sticky;
+    bottom: 1vw;
+    margin-left: 85vw;
+    opacity: 0.5;
+}
+#call-back:hover{
+    opacity: 1;
 }

@@ -1,6 +1,10 @@
 body{
     margin: 0px;
     background-color: #FFE9E9;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    overflow-x: hidden;
 }
 #header{
     height: 120px;
@@ -19,6 +23,7 @@ body{
     height: 105px;
 }
 #nav-section{
+    z-index: 3;
     display: flex;
     justify-content: center;
     font-family: 'Jura-Light';
@@ -34,6 +39,10 @@ body{
 	border-left: 80px solid transparent;
 	width: 440px;
     text-align: center;
+    opacity: 0.7;
+}
+#nav-1:hover{
+    opacity: 1;
 }
 #nav-1 div{
     margin-top: -5vw;
@@ -42,6 +51,10 @@ body{
     background-color: #8E0000;
     height: 6vw;
 	width: 440px;
+    opacity: 0.7;
+}
+#nav-2:hover{
+    opacity: 1;
 }
 #nav-2 div{
     margin-top: 1vw;
@@ -50,6 +63,10 @@ body{
     border-top: 6vw solid red;
 	border-right: 80px solid transparent;
 	width: 440px;
+    opacity: 0.7;
+}
+#nav-3:hover{
+    opacity: 1;
 }
 #nav-3 div{
     margin-top: -5vw;

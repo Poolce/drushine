@@ -27,3 +27,10 @@ function unlockScroll(){
 
     $body.css({'margin-right': 0, 'margin-bottom': 0});
 }
+
+(function ($) {
+    $.fn.isBeforeElement = function (elem) {
+        if (typeof(elem) == "string") elem = $(elem); //just in case of bad input
+        return this.add(elem).index(elem) > 0;
+    }
+})(jQuery);
