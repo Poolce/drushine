@@ -1,0 +1,29 @@
+footer{background-color: #480000;
+padding-bottom: 1vw;}
+#footer-up-content{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+#links{
+    padding: 2vw;
+}
+.soc-link img{
+    height: 5vw;
+    width: 5vw;
+}
+#footer-contacts{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.footer-contacts-content{
+    font-family: 'Jura-Light';
+    font-size: min(4vw,40px);
+    color: white;
+    margin: 1vw;
+}
+#footer-under-line{
+    height: 3px;
+    background: white;
+}

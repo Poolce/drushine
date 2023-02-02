@@ -1,0 +1,25 @@
+{
+  "name": "drushine",
+  "version": "1.0.0",
+  "description": "The site of company",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poolce/drushine.git"
+  },
+  "author": "Poolce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poolce/drushine/issues"
+  },
+  "homepage": "https://github.com/Poolce/drushine#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}
