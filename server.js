@@ -1,73 +1,43 @@
-const Express = require('express');
+const Express = require("express");
 const ph = require("path");
 const app = Express();
-var bodyParser = require('body-parser');
+const request = require("request");
+var bodyParser = require("body-parser");
+var TelegramBot = require('node-telegram-bot-api');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(Express.static('front'));
+app.use(Express.static("front"));
 
 
+var token = '6024594786:AAEFvAXP3QQWx3OCHreRLYFncQjqBDW4Sg8';
+var bot = new TelegramBot(token, {polling: true});
 
-app.post('/get_busy', async (req, res) => {
-    try
-    {
-        date = req.body.date;
-        let s = await db.get_busy(date);
-        res.send(s);
-    }
-    catch(err)
-    {
-        res.end(JSON.stringify(err))
-    }
+bot.on('message', function onMessage(msg) {
+    console.log(msg.chat)
 });
 
-app.post('/get_duration', async (req, res) => {
-    try
-    {
-        c_name = req.body.name;
-        let s = await db.get_duration(c_name);
-        res.send(s);
+async function send_msg(msg) {
+    try{
+        s = await bot.sendMessage(1759449227,msg)
+    } catch (err){
+        console.log(err)
     }
-    catch(err)
-    {
-        res.end(JSON.stringify(err))
-    }
+}
+app.get("/", async (req, res) => {
+  try {
+    res.sendFile(ph.join(__dirname + "/front/main.html"));
+  } catch (err) {
+    res.end(JSON.stringify(err));
+  }
 });
-
-app.post('/send_res', async (req, res) => {
-    try
-    {        
-        u_name = req.body.user_name;
-        date = req.body.date;
-        с_time = req.body.time;
-        c_id = req.body.id;
-        console.log()
-        let s = await db.sign_up(с_time,date,c_id,u_name);
-        res.send(s);
-    }
-    catch(err)
-    {
-        res.end(JSON.stringify(err))
-    }
-});
-
-app.post('/get_tags', async (req, res) => {
+app.post('/send_message', async (req, res) => {
     try
     {
-        let s = await db.get_tags();
-        res.send(s);
-    }
-    catch(err)
-    {
-        res.end(JSON.stringify(err))
-    }
-});
-
-app.get('/', async (req, res) => {
-    try
-    {
-        res.sendFile(ph.join(__dirname+'/front/index.html'))
+        nomber = req.body.nom;
+        console.log(nomber)
+        a = await send_msg(nomber);
+        res.send("0");
     }
     catch(err)
     {
@@ -76,5 +46,6 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(8000, () => {
-    console.log('Application listening on port 8000!');
+    bot.ms
+    console.log("Application listening on port 8000!");
 });

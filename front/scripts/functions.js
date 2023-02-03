@@ -67,3 +67,11 @@ async function right_swap_animation() {
       $('#sales-boxes').append(sale_boxes[0]);
     }).animate({ "width": "10vw", "opacity": "0.5", "height": "10vw" }, 100);
   }
+
+  function out_mesage(head,text){
+    $("#h-text").text(head);
+    $("#text").text(text);
+    $("#herit-page").fadeIn("fast");
+    $("#call-send").fadeIn("fast");
+    lockScroll();
+  }

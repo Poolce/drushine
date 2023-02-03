@@ -1,5 +1,4 @@
 $(window).on('load', function () {
-
     $('.preloader').fadeOut('fast').end().delay(20).fadeOut('fast');
   });
   $(document).ready(function () {
@@ -27,16 +26,6 @@ $(window).on('load', function () {
     $("#herit-page").fadeOut("fast");
     $("#services").fadeOut("fast");
     unlockScroll();
-  });
-  $("#callbox-send-nom").click(function () {
-    $("#herit-page").fadeIn("fast");
-    $("#call-send").fadeIn("fast");
-    lockScroll();
-  });
-  $("#herit-callbox-send-nom").click(function () {
-    $("#herit-page").fadeIn("fast");
-    $("#services").fadeOut("fast");
-    $("#call-send").fadeIn("fast");
   });
   $("#cs-exit-grid").click(function () {
     $("#herit-page").fadeOut("fast");
