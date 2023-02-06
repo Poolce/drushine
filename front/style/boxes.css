@@ -198,11 +198,42 @@
 #call-back{
     height: min(15vw,150px);
     width: min(15vw,150px);
-    position: sticky;
-    bottom: 1vw;
-    margin-left: 80vw;
     opacity: 0.5;
 }
 #call-back:hover{
     opacity: 1;
+}
+#geo-position{
+    height: min(15vw,150px);
+    width: min(40vw,400px);
+    opacity: 0.5;
+    background-color: #CE0000;
+    border-radius: min(15vw,150px);
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+#geo-position img{
+    height: min(10vw,100px);
+    margin: auto 1vw;
+    margin-left: 3vw;
+
+}
+#geo-position:hover{
+    opacity: 1;
+}
+#gp-text{
+    text-align: center;
+    color: white;
+    font-family: 'Jura-Bold';
+    font-size: min(3vw,30px);
+    margin: auto 1vw;
+}
+#under-nav{
+    position: sticky;
+    bottom: 2vw;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin-left: 10vw;
 }

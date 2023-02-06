@@ -4,6 +4,8 @@
     position: fixed;
     background: rgba(255, 233, 233, 0.7);
     z-index: 10;
+    display: flex;
+    vertical-align: middle;
 }
 #services{
     position: fixed;
@@ -139,4 +141,21 @@
     text-align: center;
     font-size: min(4vw,40px);
     margin-top: 1vw;
+}
+#big-img{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    vertical-align: middle;
+    margin: auto;
+    height: 100vh;
+    width: 100vw;
+}
+#bi-shell{
+    margin: auto;
+}
+#big-img img{
+
+    max-height: 100vh;
+    max-width: 100vw;
 }

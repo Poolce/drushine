@@ -11,6 +11,30 @@ async function send_nom(nomber) {
   }
 }
 
+let services;
+async function get_services() {
+  try {
+    $("#serv-loading").show();
+    let res = await $.post("http://localhost:8000/get_services");
+    $("#serv-loading").hide();
+    services = JSON.parse(res);
+    console.log(services)
+    console.log(services.length)
+    for(i = 0;i<services.length;i++){
+      el = document.createElement("option");
+      el.textContent = services[i].name;
+      el.id = services[i].id;
+      document.getElementById("search").appendChild(el);
+    }
+    document.getElementById("search").getElementsByTagName("option")[0].selected = true;
+    document.getElementById("serv-photo").setAttribute("src", services[0].photo);
+    document.getElementById("serv-description").textContent = services[0].description;
+    document.getElementById("serv-price").textContent = "Примерная стоимость данной услуги: "+services[0].price;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 $("#herit-callbox-send-nom").click(async function () {
   nom = document.getElementById("herit-phone-nom").value;
   $("#services").fadeOut("fast");

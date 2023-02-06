@@ -5,10 +5,20 @@ $(window).on('load', function () {
     $("#herit-page").hide();
     $("#services").hide();
     $("#call-send").hide();
+    $("#serv-loading").hide();
+    $("#big-img").hide();
     right_swap_animation();
     unlockScroll();
   });
 
+  $("#search").change(function (e) {
+    id = e.target.selectedIndex;
+    document.getElementById("serv-photo").setAttribute("src", services[id].photo);
+    document.getElementById("serv-description").textContent =
+      services[id].description;
+    document.getElementById("serv-price").textContent =
+      "Примерная стоимость данной услуги: " + services[id].price;
+  });
   $("#phone-nom").click(function () {
     $(this).setCursorPosition(3);
   }).mask("+7(999) 999-9999");
@@ -18,6 +28,7 @@ $(window).on('load', function () {
   }).mask("+7(999) 999-9999");
 
   $("#nav-2").click(function () {
+    get_services();
     $("#herit-page").fadeIn("fast");
     $("#services").fadeIn("fast");
     lockScroll();
@@ -69,7 +80,17 @@ $(window).on('load', function () {
     $("#herit-page").fadeOut("fast");
     $("#services").fadeOut("fast");
     $("#call-send").fadeOut("fast");
+    $("#big-img").fadeOut("fast");
+    $("#bi-shell").empty();
     unlockScroll();
+  });
+  $(".image-img").click(function () {
+    el = $(this).clone();
+    el.className = "";
+    el.appendTo("#bi-shell")
+    $("#herit-page").fadeIn("fast");
+    $("#big-img").fadeIn("fast");
+    lockScroll();
   });
   $("#sn-left").click(function () {
     left_swap_animation();

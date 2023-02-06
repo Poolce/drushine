@@ -112,3 +112,14 @@ body{
   .loaded .preloader {
     display: none;
   }
+  #serv-loading{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .serv-loading-img{
+    width: 128px;
+    height: 128px;
+    background: url('../Preloader.gif') no-repeat 50% 50%;
+  }

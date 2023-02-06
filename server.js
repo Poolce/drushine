@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(Express.static("front"));
 
 
-var token = '6024594786:AAEFvAXP3QQWx3OCHreRLYFncQjqBDW4Sg8';
+var token = '6024594786:AAEFg8';
 var bot = new TelegramBot(token, { polling: true });
 
 function convert_time(timestamp) {
@@ -128,6 +128,20 @@ app.get("/", async (req, res) => {
         res.end(JSON.stringify(err));
     }
 });
+app.post('/get_services', async (req, res) => {
+    try
+    {
+        fs.readFile('services.json', 'utf8', function (err, data) {
+            if (err) throw err;
+            res.send(data);
+          });
+    }
+    catch(err)
+    {
+        res.end(JSON.stringify(err))
+    }
+});
+
 app.post('/send_message', async (req, res) => {
     try {
         nomber = req.body.nom;
