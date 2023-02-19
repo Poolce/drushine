@@ -199,6 +199,9 @@
     height: min(15vw,150px);
     width: min(15vw,150px);
     opacity: 0.5;
+    position: sticky;
+    bottom: 2vw;
+    margin-left: 80vw;
 }
 #call-back:hover{
     opacity: 1;
@@ -236,4 +239,15 @@
     justify-content: space-between;
     width: 80vw;
     margin-left: 10vw;
+}
+#rv-container{
+    min-height: 40vh;
+}
+#cf-err{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2vw;
+    color: #CE0000;
+    font-family: 'Jura-Bold';
+    font-size: min(3vw,30px);
 }

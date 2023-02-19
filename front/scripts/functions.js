@@ -75,3 +75,36 @@ async function right_swap_animation() {
     $("#call-send").fadeIn("fast");
     lockScroll();
   }
+
+  let curr_coment_first = 0;
+  let coment_len = 0;
+  function next_coments(){
+    $("#rv-container").fadeOut("fast");
+    curr_coment_first+=3;
+    if(curr_coment_first>=coment_len)curr_coment_first-=coment_len;
+    coment_len = coments.length;
+    reviews = document.getElementsByClassName("review");
+    if(coment_len!=0){
+      let iter = curr_coment_first;
+      res = ""
+      for(let i = 0; i<3;i++)
+      {
+        if(iter == coment_len) iter = 0;
+        $(reviews[i]).empty();
+        let str = `<content class="rw-name">${coments[iter].client_fn}</content>
+        <br />
+        <content class="rw-class">Клиент</content>
+        <br />
+        <content class="rw-text"
+          >${coments[iter].text}</content
+        >
+        <br />
+        <content class="rw-date">${coments[iter].date.Day}.${coments[iter].date.Month}.${coments[iter].date.Year}   ${coments[iter].date.Hour}:${coments[iter].date.Min}</content>
+        <div class="under-line"></div>`;
+        $(reviews[i]).html(str);
+        console.log(str);
+        iter++; 
+      }
+    }
+    $("#rv-container").fadeIn("fast");
+  }

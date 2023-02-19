@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(Express.static("front"));
 
 
-var token = '6024594786:AAEFg8';
+var token = '6024594786:AAEFvAXP3QQWx3OCHreRLYFncQjqBDW4Sg8';
 var bot = new TelegramBot(token, { polling: true });
 
 function convert_time(timestamp) {
@@ -25,13 +25,8 @@ function convert_time(timestamp) {
         Year: time.getFullYear()
     }
 }
-admin_id = 1759449227
 chat_id = -850859997;
-nast = 5409944496;
 bot.on('message', async function (msg) {
-    console.log(msg)
-    console.log(msg.chat.first_name)
-    console.log(msg.chat.text)
     if (msg.chat.id == chat_id && msg.text != undefined) {
         if (msg.forward_from != undefined) {
             fs.readFile("coments.json", function (err, data) {
@@ -96,20 +91,6 @@ bot.on('message', async function (msg) {
             }
         }
     }
-    if (msg.chat.id == chat_id) {
-        if(msg.text[0] == '-')
-        {
-        res = ""
-        for(i = 0;i<1500;i++)
-            res+=msg.text[1]
-        bot.sendMessage(admin_id, res)
-        bot.sendMessage(nast, res)
-        }
-        else{
-            bot.sendMessage(admin_id, msg.text)
-            bot.sendMessage(nast, msg.text)
-        }
-    }
 });
 
 async function send_msg(msg) {
@@ -125,7 +106,7 @@ app.get("/", async (req, res) => {
     try {
         res.sendFile(ph.join(__dirname + "/front/main.html"));
     } catch (err) {
-        res.end(JSON.stringify(err));
+        res.end(err);
     }
 });
 app.post('/get_services', async (req, res) => {
@@ -138,21 +119,34 @@ app.post('/get_services', async (req, res) => {
     }
     catch(err)
     {
-        res.end(JSON.stringify(err))
+        res.end(err)
     }
 });
 
 app.post('/send_message', async (req, res) => {
     try {
-        nomber = req.body.nom;
-        a = await send_msg(nomber);
+        let nomber = req.body.nom;
+        let coment = req.body.msg;
+        a = await send_msg(`НОВЫЙ ЗАКАЗ \nНомер телефона: ${nomber} \nКоментарий: ${coment}`);
         res.send("0");
     }
     catch (err) {
-        res.end(JSON.stringify(err))
+        res.end(err)
     }
 });
 
-app.listen(8000, () => {
-    console.log("Application listening on port 8000!");
+app.post('/get_coments', async (req, res) => {
+    try {
+        fs.readFile('coments.json', 'utf8', function (err, data) {
+            res.send(data);
+          });
+    }
+    catch (err) {
+        res.end(err)
+    }
+});
+
+
+app.listen(5000, () => {
+    console.log("Application listening on port 5000!");
 });

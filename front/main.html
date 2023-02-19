@@ -5,11 +5,6 @@
     <meta http-equiv="X-UA-Compatible" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Дружина</title>
-    <link rel="preload" href="./fonts/Jura-Light.woff2" as="font" />
-    <link rel="preload" href="./fonts/Jura-Regular.woff2" as="font" />
-    <link rel="preload" href="./fonts/Jura-Medium.woff2" as="font" />
-    <link rel="preload" href="./fonts/Jura-SemiBold.woff2" as="font" />
-    <link rel="preload" href="./fonts/Jura-Bold.woff2" as="font" />
     <link rel="stylesheet" href="./style/font.css" />
     <link rel="stylesheet" href="./style/boxes.css" />
     <link rel="stylesheet" href="./style/footer.css" />
@@ -28,8 +23,8 @@
       </div>
     </section>
     <div id="services">
-      <div id="exit-grid">
-        <img id="exit" src="./design/export/x.png" alt="" />
+      <div class="exit-grid">
+        <img class="exit" src="./design/export/x.png" alt="" />
       </div>
       <div id="search-grid">
         <select name="" id="search"></select>
@@ -56,6 +51,17 @@
         </div>
       </div>
     </div>
+
+    <div id="coment-form">
+      <div class="exit-grid">
+        <img class="exit" src="./design/export/x.png" alt="" />
+      </div>
+      <h1>Коротко опишите какую работу вы бы хотели заказать</h1>
+      <div class="cf-shell"><textarea id="cf-comm" rows="7"></textarea></div>
+      <div id="cf-err"></div>
+      <div class="cf-shell"><input type="button" id="cf-btn" value="Отправить"></div>
+    </div>
+
     <div id="call-send">
       <div id="cs-exit-grid">
         <img id="exit" src="./design/export/x.png" alt="" />
@@ -190,52 +196,21 @@
     <section id="reviews">
       <div class="content-box">
         <h1>Отзывы</h1>
+        <div id="rv-container">
         <div class="review">
-          <content class="rw-name">Александр</content>
-          <br />
-          <content class="rw-class">Заказчик</content>
-          <br />
-          <content class="rw-text"
-            >Вкусные цены, есть возможность индивидуального обсуждения
-            цены.</content
-          >
-          <br />
-          <content class="rw-date">29.02.2023</content>
-          <div class="under-line"></div>
         </div>
         <div class="review">
-          <content class="rw-name">Александр</content>
-          <br />
-          <content class="rw-class">Заказчик</content>
-          <br />
-          <content class="rw-text"
-            >Вкусные цены, есть возможность индивидуального обсуждения
-            цены.</content
-          >
-          <br />
-          <content class="rw-date">29.02.2023</content>
-          <div class="under-line"></div>
         </div>
         <div class="review">
-          <content class="rw-name">Александр</content>
-          <br />
-          <content class="rw-class">Заказчик</content>
-          <br />
-          <content class="rw-text"
-            >Вкусные цены, есть возможность индивидуального обсуждения
-            цены.</content
-          >
-          <br />
-          <content class="rw-date">29.02.2023</content>
+        </div>
         </div>
         <br />
-        <div id="rw-info">Отзывы можно оставить после подтверждения заказа</div>
+        <div id="rw-info" style="text-decoration: underline;">Нажмите чтобы посмотреть дальше</div>
+        <br />
+        <div id="rw-info">Отзывы можно оставить в беседе Telegram по ссылке ниже</div>
       </div>
     </section>
-    <div id="under-nav">
-      <div id="geo-position"><img src="./design/export/pin.png" alt="" /><div id="gp-text">Нижний Новгород</div></div>
       <img id="call-back" src="./design/export/tel.png" alt="" />
-    </div>
     <footer>
       <div id="footer-up-content">
         <div id="links">
